@@ -1,0 +1,14 @@
+[
+    {
+        "title": "Procesador intel",
+        "price": 100
+    },
+    {
+        "title": "Procesador AMD",
+        "price": 80
+    },
+    {
+        "title": "Ram 4gb",
+        "price": 40
+    }
+]
