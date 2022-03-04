@@ -2,26 +2,31 @@
 	{
 		"img": "./image/product-intel.jpg",
 		"title": "Procesador intel",
-		"price": 100
+		"price": 100,
+        "id": 1
 	},
 	{
 		"img": "./image/product-amd.jpg",
 		"title": "Procesador AMD",
-		"price": 80
+		"price": 80,
+        "id": 2
 	},
 	{
 		"img": "./image/product-ram4gb.jpg",
 		"title": "Ram 4gb",
-		"price": 40
+		"price": 40,
+        "id": 3
 	},
 	{
 		"img": "./image/product-teclado.jpg",
 		"title": "Teclado",
-		"price": 20
+		"price": 20,
+        "id": 4
 	},
 	{
 		"img": "./image/product-placaVideo.png",
 		"title": "Placa de Video",
-		"price": 450
+		"price": 450,
+        "id": 5
 	}
 ]

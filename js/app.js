@@ -1,28 +1,18 @@
-// const getData = function () {
-// 	const xhttp = new XMLHttpRequest();
-// 	xhttp.open('GET', 'products.json', true);
-// 	xhttp.send();
-// 	xhttp.onreadystatechange = function () {
-// 		if (this.readyState == 4 && this.status == 200) {
-// 			let data = JSON.parse(this.response);
-// 			let products = document.querySelector('#products');
-// 			products.innerHTML = '';
-// 			for (let item of data) {
-// 				products.innerHTML += `
-//                 <div id="product">
-//                     <h2 id="product__title">${item.title}</h2>
-//                     <p id="product__price">${item.price}</p>
-//                 </div>
-//                 `;
-// 			}
-// 		}
-// 	};
-// };
-// getData();
+
+const cards = document.getElementById('shoppingCart');
+const templateCartProducts = document.getElementById('productCart').content;
+const productsCart = document.getElementById('productsCart');
+let cart = {};
 
 document.addEventListener('DOMContentLoaded', () => {
 	fetchData();
+	console.log(templateCartProducts)
 });
+
+cards.addEventListener('click', e => {
+	addCart(e);
+});
+
 
 const fetchData = async () => {
 	const products = './products.json';
@@ -37,7 +27,6 @@ const fetchData = async () => {
 };
 
 const pintarData = (data) => {
-	const cards = document.getElementById('shoppingCart');
 	const templateCard = document.getElementById('card').content;
 	const fragment = document.createDocumentFragment();
 
@@ -46,7 +35,39 @@ const pintarData = (data) => {
 		clone.querySelector('img').src = item.img;
 		clone.querySelector('h5').textContent = item.title;
 		clone.querySelector('p span').textContent = item.price;
+		clone.querySelector('a').dataset.id = item.id;
 		fragment.appendChild(clone);
 	});
 	cards.appendChild(fragment);
 };
+
+const addCart = e => {
+	if(e.target.classList.contains('btn')){
+		setCart(e.target.parentElement);
+	}
+	e.stopPropagation();
+}
+const setCart = productInfo => {
+	const product = {
+		name: productInfo.querySelector('h5').textContent,
+		price: productInfo.querySelector('span').textContent,
+		id: productInfo.querySelector('.btn').dataset.id
+	}
+	cart[product.id] = {...product}
+	showCart();
+	console.log(cart);
+}
+
+const showCart = () => {
+	const fragment = document.createDocumentFragment();
+	productsCart.innerHTML = "";
+	Object.values(cart).forEach(value => {
+		const clone = templateCartProducts.cloneNode(true);
+		clone.querySelector('h5').textContent = value.name;
+		clone.querySelector('p').textContent = `$ ${value.price}`;
+		
+		fragment.appendChild(clone);
+	});
+	productsCart.appendChild(fragment);
+}
+
