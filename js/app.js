@@ -1,6 +1,7 @@
 const cards = document.getElementById('shoppingCart');
 const productsCart = document.getElementById('productsCart');
 let cart = {};
+let total = 0;
 carrito = [];
 
 document.addEventListener('DOMContentLoaded', () => {
@@ -68,6 +69,7 @@ const setCart = (productInfo) => {
 		carrito[index].cantidad++;
 	}
 	cart[product.id] = { ...product };
+	console.log(carrito);
 	showCart();
 };
 
@@ -86,6 +88,7 @@ const showCart = () => {
 		fragment.appendChild(clone);
 	});
 	productsCart.appendChild(fragment);
+	setTotal();
 };
 
 const btnAgregar = (e) => {
@@ -100,6 +103,7 @@ const btnAgregar = (e) => {
 		}
 	});
 	showCart();
+	
 };
 
 const btnQuitar = (e) => {
@@ -120,3 +124,23 @@ const btnQuitar = (e) => {
 	});
 	showCart();
 };
+
+const setTotal = () => {
+	total = 0;
+	carrito.forEach((item) => {
+		total = total + (parseInt(item.price) * item.cantidad);
+	});
+	if(total > 0){
+		showTotal();
+	}
+	
+}
+
+const showTotal = () => {
+	const templateTotal = document.getElementById('total');
+	const fragment = document.createDocumentFragment();
+	const clone = templateTotal.content.cloneNode(true);
+	clone.querySelector('p').textContent = `$ ${total}`;
+	fragment.appendChild(clone);
+	productsCart.appendChild(fragment);
+}
