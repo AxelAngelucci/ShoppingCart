@@ -18,6 +18,9 @@
 		/>
 	</head>
 	<body class="bg-dark">
+
+
+		
 		<!--==================== start header area ====================-->
 		<header class="header">
 			<nav class="navbar navbar-light bg-light fixed-top bg-dark shadow">
@@ -108,6 +111,8 @@
 		</header>
 		<!--==================== end header area ====================-->
 
+
+
 		<!--==================== start main area ====================-->
 		<main class="d-flex flex-column flex-md-row mt-5">
 			<section class="col-12 col-md-8">
@@ -127,6 +132,8 @@
 			</section>
 		</main>
 		<!--==================== end main area ====================-->
+
+
 
 		<!--==================== start card area ====================-->
 		<template id="card">
@@ -156,18 +163,24 @@
 		</template>
 		<!--==================== end card area ====================-->
 
-     <!--==================== start cart card area ====================-->
-        <template id="productCart">
-          <div class="bg-light rounded card-body my-2">
-            <div class="d-flex justify-content-between">
-              <h5 class="card-title">Card title</h5><span class="badge bg-primary fs-6">1</span>
-            </div>
-            <p class="card-text fs-2">With supporting text below as a natural lead-in to additional content.</p>
-            <a href="#" class="btn col-4 btn-success btn-agregar">Agregar</a>
-            <a href="#" class="btn col-4 btn-danger btn-quitar">Quitar</a>
-          </div>
-        </template>
-        <!--==================== end cart card area ====================-->
+		
+
+		<!--==================== start cart card area ====================-->
+		<template id="productCart">
+			<div class="bg-light rounded card-body my-2 me-5">
+				<div class="d-flex justify-content-between">
+					<h5 class="card-title">Card title</h5>
+					<div ><span class="ms-4 d-flex align-items-cente badge bg-primary fs-6 "></span></div>
+				</div>
+				<p class="card-text fs-2">
+					With supporting text below as a natural lead-in to additional content.
+				</p>
+				<a href="#" class="btn col-4 btn-success btn-agregar">Agregar</a>
+				<a href="#" class="btn col-4 btn-danger btn-quitar">Quitar</a>
+			</div>
+		</template>
+		<!--==================== end cart card area ====================-->
+
 
 
 		<script src="js/app.js"></script>
