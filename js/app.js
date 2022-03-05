@@ -1,27 +1,23 @@
-// const getData = function () {
-// 	const xhttp = new XMLHttpRequest();
-// 	xhttp.open('GET', 'products.json', true);
-// 	xhttp.send();
-// 	xhttp.onreadystatechange = function () {
-// 		if (this.readyState == 4 && this.status == 200) {
-// 			let data = JSON.parse(this.response);
-// 			let products = document.querySelector('#products');
-// 			products.innerHTML = '';
-// 			for (let item of data) {
-// 				products.innerHTML += `
-//                 <div id="product">
-//                     <h2 id="product__title">${item.title}</h2>
-//                     <p id="product__price">${item.price}</p>
-//                 </div>
-//                 `;
-// 			}
-// 		}
-// 	};
-// };
-// getData();
+const cards = document.getElementById('shoppingCart');
+const productsCart = document.getElementById('productsCart');
+let cart = {};
+carrito = [];
 
 document.addEventListener('DOMContentLoaded', () => {
 	fetchData();
+});
+
+document.addEventListener('click', (e) => {
+	if (e.target.matches('.btn-agregar')) {
+		btnAgregar(e);
+	}
+	if (e.target.matches('.btn-quitar')) {
+		btnQuitar(e);
+	}
+});
+
+cards.addEventListener('click', (e) => {
+	addCart(e);
 });
 
 const fetchData = async () => {
@@ -29,7 +25,6 @@ const fetchData = async () => {
 	try {
 		const res = await fetch(products);
 		const data = await res.json();
-		console.log(data);
 		pintarData(data);
 	} catch (err) {
 		console.log(err);
@@ -37,7 +32,6 @@ const fetchData = async () => {
 };
 
 const pintarData = (data) => {
-	const cards = document.getElementById('shoppingCart');
 	const templateCard = document.getElementById('card').content;
 	const fragment = document.createDocumentFragment();
 
@@ -46,7 +40,83 @@ const pintarData = (data) => {
 		clone.querySelector('img').src = item.img;
 		clone.querySelector('h5').textContent = item.title;
 		clone.querySelector('p span').textContent = item.price;
+		clone.querySelector('a').dataset.id = item.id;
 		fragment.appendChild(clone);
 	});
 	cards.appendChild(fragment);
+};
+
+const addCart = (e) => {
+	if (e.target.classList.contains('btn')) {
+		setCart(e.target.parentElement);
+	}
+	e.stopPropagation();
+};
+const setCart = (productInfo) => {
+	const product = {
+		name: productInfo.querySelector('h5').textContent,
+		price: productInfo.querySelector('span').textContent,
+		id: productInfo.querySelector('.btn').dataset.id,
+		cantidad: 1,
+	};
+
+	const index = carrito.findIndex((item) => item.id === product.id);
+
+	if (index === -1) {
+		carrito.push(product);
+	} else {
+		carrito[index].cantidad++;
+	}
+	cart[product.id] = { ...product };
+	showCart();
+};
+
+const showCart = () => {
+	const templateCartProducts = document.getElementById('productCart');
+	const fragment = document.createDocumentFragment();
+	productsCart.textContent = '';
+
+	carrito.forEach((item) => {
+		const clone = templateCartProducts.content.cloneNode(true);
+		clone.querySelector('h5').textContent = item.name;
+		clone.querySelector('span').textContent = item.cantidad;
+		clone.querySelector('.btn-agregar').dataset.id = item.id;
+		clone.querySelector('.btn-quitar').dataset.id = item.id;
+		clone.querySelector('p').textContent = `$ ${item.price * item.cantidad}`;
+		fragment.appendChild(clone);
+	});
+	productsCart.appendChild(fragment);
+};
+
+const btnAgregar = (e) => {
+	carrito.textContent = '';
+
+	carrito = carrito.map((item) => {
+		if (e.target.dataset.id === item.id) {
+			item.cantidad++;
+			return item;
+		} else {
+			return item;
+		}
+	});
+	showCart();
+};
+
+const btnQuitar = (e) => {
+	carrito.textContent = '';
+
+	carrito = carrito.filter((item) => {
+		if (e.target.dataset.id === item.id) {
+			if (item.cantidad > 0) {
+				item.cantidad--;
+				if (item.cantidad === 0) return;
+				return item;
+			} else {
+				return item;
+			}
+		} else {
+			return item;
+		}
+	});
+	showCart();
 };

@@ -1,27 +1,38 @@
 [
 	{
-		"img": "./image/product-intel.jpg",
-		"title": "Procesador intel",
-		"price": 100
+		"img": "./image/product-intel-l5.png",
+		"title": "Micro Procesador Intel I5 10400 Socket 1200",
+		"price": 100,
+		"id": 1
 	},
 	{
-		"img": "./image/product-amd.jpg",
-		"title": "Procesador AMD",
-		"price": 80
+		"img": "./image/product-amd-as.png",
+		"title": "Micro Amd A6 7480k 3.8ghz Fm2+",
+		"price": 85,
+		"id": 2
 	},
 	{
-		"img": "./image/product-ram4gb.jpg",
-		"title": "Ram 4gb",
-		"price": 40
+		"img": "./image/product-ram4gb-k.png",
+		"title": "Memoria RAM ValueRAM color verde 4GB 1 Kingston KVR26S19S6/4",
+		"price": 40,
+		"id": 3
 	},
 	{
-		"img": "./image/product-teclado.jpg",
-		"title": "Teclado",
-		"price": 20
+		"img": "./image/product-teclado-gamer.png",
+		"title": "Teclado gamer Redragon Shiva K512 RGB QWERTY español latinoamérica color negro con luz RGB",
+		"price": 52,
+		"id": 4
 	},
 	{
-		"img": "./image/product-placaVideo.png",
-		"title": "Placa de Video",
-		"price": 450
+		"img": "./image/product-pdv-rtx.jpg",
+		"title": "Placa De Video Palit Nvidia Rtx 3050 Dual 8gb Gddr6",
+		"price": 450,
+		"id": 5
+	},
+	{
+		"img": "./image/product-nootbook-lenovo.png",
+		"title": "Notebook Lenovo IdeaPad 14IGL05 ice blue 14",
+		"price": 1085,
+		"id": 5
 	}
 ]
