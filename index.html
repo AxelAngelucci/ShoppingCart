@@ -10,96 +10,153 @@
 			rel="stylesheet"
 			href="https://cdn.jsdelivr.net/npm/bootstrap-icons@1.8.1/font/bootstrap-icons.css"
 		/>
-        <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.1.3/dist/css/bootstrap.min.css" rel="stylesheet" integrity="sha384-1BmE4kWBq78iYhFldvKuhfTAU6auU8tT94WrHftjDbrCEXSU1oBoqyl2QvZ6jIW3" crossorigin="anonymous">
+		<link
+			href="https://cdn.jsdelivr.net/npm/bootstrap@5.1.3/dist/css/bootstrap.min.css"
+			rel="stylesheet"
+			integrity="sha384-1BmE4kWBq78iYhFldvKuhfTAU6auU8tT94WrHftjDbrCEXSU1oBoqyl2QvZ6jIW3"
+			crossorigin="anonymous"
+		/>
 	</head>
 	<body class="bg-dark">
-
-
-
 		<!--==================== start header area ====================-->
 		<header class="header">
-            <nav class="navbar navbar-light bg-light fixed-top bg-dark shadow">
-                <div class="container-fluid">
-                  <a class="navbar-brand text-white ms-2" href="#">Gamer</a>
-                  <button class="navbar-toggler bg-white me-2" type="button" data-bs-toggle="offcanvas" data-bs-target="#offcanvasNavbar" aria-controls="offcanvasNavbar">
-                    <span class="navbar-toggler-icon"></span>
-                  </button>
-                  <div class="offcanvas offcanvas-end" tabindex="-1" id="offcanvasNavbar" aria-labelledby="offcanvasNavbarLabel">
-                    <div class="offcanvas-header">
-                      <h5 class="offcanvas-title" id="offcanvasNavbarLabel">Offcanvas</h5>
-                      <button type="button" class="btn-close text-reset" data-bs-dismiss="offcanvas" aria-label="Close"></button>
-                    </div>
-                    <div class="offcanvas-body">
-                      <ul class="navbar-nav justify-content-end flex-grow-1 pe-3">
-                        <li class="nav-item">
-                          <a class="nav-link active" aria-current="page" href="#">Home</a>
-                        </li>
-                        <li class="nav-item">
-                          <a class="nav-link" href="#">Link</a>
-                        </li>
-                        <li class="nav-item dropdown">
-                          <a class="nav-link dropdown-toggle" href="#" id="offcanvasNavbarDropdown" role="button" data-bs-toggle="dropdown" aria-expanded="false">
-                            Dropdown
-                          </a>
-                          <ul class="dropdown-menu" aria-labelledby="offcanvasNavbarDropdown">
-                            <li><a class="dropdown-item" href="#">Action</a></li>
-                            <li><a class="dropdown-item" href="#">Another action</a></li>
-                            <li>
-                              <hr class="dropdown-divider">
-                            </li>
-                            <li><a class="dropdown-item" href="#">Something else here</a></li>
-                          </ul>
-                        </li>
-                      </ul>
-                      <form class="d-flex">
-                        <input class="form-control me-2" type="search" placeholder="Search" aria-label="Search">
-                        <button class="btn btn-outline-success" type="submit">Search</button>
-                      </form>
-                    </div>
-                  </div>
-                </div>
-              </nav>
-              <div>
-                <img class="img-fluid" src="./image/main-gamer.jpg"></img>
-            </div>
+			<nav class="navbar navbar-light bg-light fixed-top bg-dark shadow">
+				<div class="container-fluid">
+					<a class="navbar-brand text-white ms-2" href="#">Gamer</a>
+					<button
+						class="navbar-toggler bg-white me-2"
+						type="button"
+						data-bs-toggle="offcanvas"
+						data-bs-target="#offcanvasNavbar"
+						aria-controls="offcanvasNavbar"
+					>
+						<span class="navbar-toggler-icon"></span>
+					</button>
+					<div
+						class="offcanvas offcanvas-end"
+						tabindex="-1"
+						id="offcanvasNavbar"
+						aria-labelledby="offcanvasNavbarLabel"
+					>
+						<div class="offcanvas-header">
+							<h5 class="offcanvas-title" id="offcanvasNavbarLabel">
+								Offcanvas
+							</h5>
+							<button
+								type="button"
+								class="btn-close text-reset"
+								data-bs-dismiss="offcanvas"
+								aria-label="Close"
+							></button>
+						</div>
+						<div class="offcanvas-body">
+							<ul class="navbar-nav justify-content-end flex-grow-1 pe-3">
+								<li class="nav-item">
+									<a class="nav-link active" aria-current="page" href="#"
+										>Home</a
+									>
+								</li>
+								<li class="nav-item">
+									<a class="nav-link" href="#">Link</a>
+								</li>
+								<li class="nav-item dropdown">
+									<a
+										class="nav-link dropdown-toggle"
+										href="#"
+										id="offcanvasNavbarDropdown"
+										role="button"
+										data-bs-toggle="dropdown"
+										aria-expanded="false"
+									>
+										Dropdown
+									</a>
+									<ul
+										class="dropdown-menu"
+										aria-labelledby="offcanvasNavbarDropdown"
+									>
+										<li><a class="dropdown-item" href="#">Action</a></li>
+										<li>
+											<a class="dropdown-item" href="#">Another action</a>
+										</li>
+										<li>
+											<hr class="dropdown-divider" />
+										</li>
+										<li>
+											<a class="dropdown-item" href="#">Something else here</a>
+										</li>
+									</ul>
+								</li>
+							</ul>
+							<form class="d-flex">
+								<input
+									class="form-control me-2"
+									type="search"
+									placeholder="Search"
+									aria-label="Search"
+								/>
+								<button class="btn btn-outline-success" type="submit">
+									Search
+								</button>
+							</form>
+						</div>
+					</div>
+				</div>
+			</nav>
+			<div>
+				<!-- <img class="img-fluid" src="./image/main-gamer.jpg"></img> -->
+			</div>
 		</header>
 		<!--==================== end header area ====================-->
 
+		<!--==================== start main area ====================-->
+		<main class="d-flex flex-column flex-md-row mt-5">
+			<section class="col-12 col-md-8">
+				<h3 class="d-flex justify-content-center fs-1 py-3 text-white">
+					Pedidos en linea
+				</h3>
+				<div
+					class="d-flex m-2 flex-wrap justify-content-around"
+					id="shoppingCart"
+				></div>
+			</section>
+			<section class="col-12 col-md-4" id="cart">
+				<h3 class="d-flex justify-content-center fs-1 py-3 text-white">
+					Carrito
+				</h3>
+				<ul class="" id="productsCart"></ul>
+			</section>
+		</main>
+		<!--==================== end main area ====================-->
 
+		<!--==================== start card area ====================-->
+		<template id="card">
+			<div class="card mb-4 col-4" style="width: 18rem">
+				<img
+					src="./image/main-gamer.jpg"
+					class="card-img-top"
+					alt="card-product"
+				/>
+				<div class="card-body">
+					<h5 class="card-title d-flex justify-content-center fs-5 text-center mx-auto"">
+						Pc Gamer
+					</h5>
+					<p
+						class="card-text d-flex justify-content-center fs-3"
+					>
+						$ <span>200</span>
+					</p>
+					<a
+						href="#"
+						class="btn btn-primary d-flex justify-content-center mx-5"
+						id="card-btn"
+						>Añadir</a
+					>
+				</div>
+			</div>
+		</template>
+		<!--==================== end card area ====================-->
 
-        <!--==================== start main area ====================-->
-        <main class="d-flex">
-            
-            <section class="col-8">
-                <h3 class="d-flex justify-content-center fs-1 py-3 text-white">Pedidos en linea</h3>
-                <div class="d-flex m-2 flex-wrap justify-content-around" id="shoppingCart"></div>
-            </section>
-            <section class="col-4" id="cart">
-              <h3 class="d-flex justify-content-center fs-1 py-3 text-white">Carrito</h3>
-              <ul class="" id="productsCart">
-              </ul>
-            </section>
-        </main>
-        <!--==================== end main area ====================-->
-
-
-
-        <!--==================== start card area ====================-->
-        <template id="card">
-            <div class="card m-2" style="width: 18rem;">
-                <img src="./image/main-gamer.jpg" class="card-img-top" alt="card-product">
-                <div class="card-body">
-                    <h5 class="card-title d-flex justify-content-center fs-3">Pc Gamer</h5>
-                    <p class="card-text d-flex justify-content-center fs-5">$ <span>200</span></p>
-                    <a href="#" class="btn btn-primary d-flex justify-content-center mx-5" id="card-btn">Añadir</a>
-                </div>
-            </div>
-        </template>
-        <!--==================== end card area ====================-->
-
-
-
-        <!--==================== start cart card area ====================-->
+     <!--==================== start cart card area ====================-->
         <template id="productCart">
           <div class="bg-light rounded card-body my-2">
             <div class="d-flex justify-content-between">
@@ -114,6 +171,10 @@
 
 
 		<script src="js/app.js"></script>
-        <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.1.3/dist/js/bootstrap.bundle.min.js" integrity="sha384-ka7Sk0Gln4gmtz2MlQnikT1wXgYsOg+OMhuP+IlRH9sENBO0LRn5q+8nbTov4+1p" crossorigin="anonymous"></script>
+		<script
+			src="https://cdn.jsdelivr.net/npm/bootstrap@5.1.3/dist/js/bootstrap.bundle.min.js"
+			integrity="sha384-ka7Sk0Gln4gmtz2MlQnikT1wXgYsOg+OMhuP+IlRH9sENBO0LRn5q+8nbTov4+1p"
+			crossorigin="anonymous"
+		></script>
 	</body>
 </html>
