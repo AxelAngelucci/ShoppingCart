@@ -103,7 +103,6 @@ const btnAgregar = (e) => {
 		}
 	});
 	showCart();
-	
 };
 
 const btnQuitar = (e) => {
@@ -128,13 +127,12 @@ const btnQuitar = (e) => {
 const setTotal = () => {
 	total = 0;
 	carrito.forEach((item) => {
-		total = total + (parseInt(item.price) * item.cantidad);
+		total = total + parseInt(item.price) * item.cantidad;
 	});
-	if(total > 0){
+	if (total > 0) {
 		showTotal();
 	}
-	
-}
+};
 
 const showTotal = () => {
 	const templateTotal = document.getElementById('total');
@@ -143,4 +141,4 @@ const showTotal = () => {
 	clone.querySelector('p').textContent = `$ ${total}`;
 	fragment.appendChild(clone);
 	productsCart.appendChild(fragment);
-}
+};
